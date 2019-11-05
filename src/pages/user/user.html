@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-grid>
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col col-12 col-sm-10 col-md-7 col-lg-5 col-xl-4>
+          <ion-navbar>
+            <ion-title>{{(user|async)?.name}} {{(user|async)?.surname}}</ion-title>
+          </ion-navbar>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-header>
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col col-12 col-sm-10 col-md-7 col-lg-5 col-xl-4>
+        <ion-card>
+          <ion-item>
+            <ion-avatar item-start>
+              <img src="{{(user|async)?.profilePhoto}}">
+            </ion-avatar>
+            <h2 *ngIf="profile==='teacher'&&sex==='man'">Profesor</h2>
+            <h2 *ngIf="profile==='teacher'&&sex==='woman'">Profesora</h2>
+            <h2 *ngIf="profile==='student'&&sex==='man'">Alumno</h2>
+            <h2 *ngIf="profile==='student'&&sex==='woman'">Alumna</h2>
+            <h2>{{(user|async)?.name}} {{(user|async)?.surname}}</h2>
+            <p>{{(user|async)?.dateBirth}}</p>
+          </ion-item>            
+          <ion-card-content>
+            <p class="text">{{(user|async)?.email}}</p>
+            <p class="text">{{(user|async)?.phone}}</p>
+          </ion-card-content>
+          <ion-row>
+            <ion-col>
+              <button ion-button icon-start clear small (click)="toDeleteUser()">
+                <ion-icon name="trash"></ion-icon>
+                <div>Delete</div>
+              </button>
+            </ion-col>
+            <ion-col>
+            </ion-col>
+            <ion-col align-self-center text-center>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

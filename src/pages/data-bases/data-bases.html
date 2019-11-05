@@ -1,0 +1,36 @@
+<ion-header> 
+  <ion-grid>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col col-12 col-sm-10 col-md-7 col-lg-5 col-xl-4>
+          <ion-navbar>
+        <ion-title>BASES DE DATOS</ion-title>
+        <ion-buttons end>
+          <button ion-button icon-only (click)="createDataBase()" ><ion-icon name="add"></ion-icon></button>
+        </ion-buttons>
+      </ion-navbar>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col col-12 col-sm-10 col-md-7 col-lg-5 col-xl-4>
+        <ion-list>
+          <ion-item *ngFor="let dataBase of dataBases" padding-left>
+            {{dataBase.Data.id}} - {{dataBase.Data.name}}
+            <button ion-button item-end (click)="goToDataBasePage(dataBase.Data.id)">INFO</button>
+            <button color="danger" *ngIf="dataBase.Data.name != 'Eliminado'" ion-button item-end (click)="deleteDataDase(dataBase.Data.id, dataBase.Data.name)">DELETE</button>
+            <button *ngIf="dataBase.Data.name === 'Eliminado'" ion-button item-end (click)="reUseDataBase(dataBase.Data.id)">REUSE</button>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

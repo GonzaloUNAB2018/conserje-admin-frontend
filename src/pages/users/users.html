@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col col-12 col-sm-10 col-md-7 col-lg-5 col-xl-4>
+        <ion-navbar>
+          <ion-title>Usuarios</ion-title>
+          <ion-buttons end>
+            <button ion-button icon-only (click)="createUser()" ><ion-icon name="add"></ion-icon></button>
+          </ion-buttons>
+        </ion-navbar>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+
+
+<ion-content padding>
+  <!--ion-grid>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col col-12 col-sm-10 col-md-7 col-lg-5 col-xl-4>
+      <ion-col-->
+        <ion-list inset>
+          <ion-item-divider>
+            <p class="title">Profesores</p>
+          </ion-item-divider>
+          <button ion-item *ngFor="let teacher of teachers" (click)="goToUserPage(teacher.uid, teacher.sex, teacher.profile)">
+            <ion-avatar item-start>
+              <img src="{{teacher.profilePhoto}}">
+            </ion-avatar>
+            <p class="item-text">{{teacher.name}} {{teacher.surname}}</p>
+          </button>
+          <ion-item-divider>
+            <p class="title">Alumnos</p>
+          </ion-item-divider>
+          <button ion-item *ngFor="let stud of studs" (click)="goToUserPage(stud.uid, stud.sex, stud.profile)">
+            <ion-avatar item-start>
+              <img src="{{stud.profilePhoto}}">
+            </ion-avatar>
+            <p class="item-text">{{stud.name}} {{stud.surname}}</p>
+          </button>
+        </ion-list>
+      <!--/ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid-->
+</ion-content>

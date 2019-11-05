@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col col-12 col-sm-10 col-md-7 col-lg-5 col-xl-4>
+        <ion-navbar>
+          <ion-title>DataBase</ion-title>
+        </ion-navbar>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col col-12 col-sm-10 col-md-7 col-lg-5 col-xl-4>
+        <ion-card *ngIf="showData">
+          <h2 padding>Detalles de la Base de Datos</h2>
+          <ion-list no-lines>
+            <ion-item>
+              <p item-start>Nombre : </p><p item-start>{{ (dataBase | async)?.name }}</p>
+            </ion-item>
+            <ion-item>
+              <p item-start>Comentarios : </p><p item-start>{{ (dataBase | async)?.type }}</p>
+            </ion-item>
+            <ion-item>
+              <button ion-button item-start (click)="toUsersPage()">USUARIOS</button>
+            </ion-item>
+          </ion-list>
+        </ion-card>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
