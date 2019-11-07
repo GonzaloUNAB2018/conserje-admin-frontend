@@ -7,8 +7,6 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
-
-
 @IonicPage()
 @Component({
   selector: 'page-users',
@@ -18,8 +16,9 @@ export class UsersPage {
 
   id: any;
   users: any;
-  teachers: any[];
-  studs: any[];
+  usrs: any;
+  conserjes: any[];
+  vecinos: any[];
   user : Observable<any>;
 
   constructor(
@@ -47,8 +46,8 @@ export class UsersPage {
     load.present();
     this.afProvider.getUsers(id).valueChanges().subscribe(users=>{
       this.users = users;
-      this.teachers = this.users.filter(user=>user.profile==='teacher');
-      this.studs = this.users.filter(user=>user.profile==='student');
+      this.conserjes = this.users.filter(user=>user.profile==='conserje');
+      this.vecinos = this.users.filter(user=>user.profile==='vecino');
       if(users){
         load.dismiss();
       }
@@ -67,8 +66,8 @@ export class UsersPage {
     .pipe(map(res=>res))
     .subscribe(users=>{
       load.dismiss();
-        this.users = users;
-        console.log(this.users);
+        this.usrs = users;
+        console.log(this.usrs);
     });
   }
 

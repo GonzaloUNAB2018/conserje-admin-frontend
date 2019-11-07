@@ -1,10 +1,40 @@
 page-create-user {
-    .toolbar-background.toolbar-background-md{
-        background-color: transparent
+    .content{
+        background-color: #b6b6b6;
     }
 
-    .dateBirth{
-        color: #707070;
-        font-size: 16px;
+    .toolbar-background.toolbar-background-md{
+        background-color: transparent;
+    }
+
+    .title{
+        color: white;
+        text-align: center;
+    }
+
+    h2{
+        color: white;
+        text-align: center;
+    }
+    .back-button-icon.icon.icon-md.back-button-icon-md.ion-md-arrow-back{
+        color: white;
+    }
+
+    .item{
+        border-radius: 20px;
+    }
+
+    ion-textarea{
+        .text-input{
+            height: 100px;
+        }
+    }
+
+    .select-text{
+        overflow: visible;
+    }
+
+    ion-select{
+        max-width: 100%;
     }
 }

@@ -1,8 +1,8 @@
 <ion-header>
   <ion-grid>
     <ion-row>
-      <ion-col></ion-col>
-      <ion-col col-12 col-sm-10 col-md-7 col-lg-5 col-xl-4>
+      <ion-col col-md-2 col-lg-2 col-xl-2></ion-col>
+      <ion-col col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8>
         <ion-navbar>
           <ion-title>Usuarios</ion-title>
           <ion-buttons end>
@@ -24,22 +24,22 @@
       <ion-col-->
         <ion-list inset>
           <ion-item-divider>
-            <p class="title">Profesores</p>
+            <p class="title">Conserjes</p>
           </ion-item-divider>
-          <button ion-item *ngFor="let teacher of teachers" (click)="goToUserPage(teacher.uid, teacher.sex, teacher.profile)">
+          <button ion-item *ngFor="let conserje of conserjes" (click)="goToUserPage(conserje.uid, conserje.sex, conserje.profile)">
             <ion-avatar item-start>
-              <img src="{{teacher.profilePhoto}}">
+              <img src="{{conserje.profilePhoto}}">
             </ion-avatar>
-            <p class="item-text">{{teacher.name}} {{teacher.surname}}</p>
+            <p class="item-text">{{conserje.name}} {{conserje.surname}}</p>
           </button>
           <ion-item-divider>
-            <p class="title">Alumnos</p>
+            <p class="title">Moradores</p>
           </ion-item-divider>
-          <button ion-item *ngFor="let stud of studs" (click)="goToUserPage(stud.uid, stud.sex, stud.profile)">
+          <button ion-item *ngFor="let vecino of vecinos" (click)="goToUserPage(vecino.uid, vecino.sex, vecino.profile)">
             <ion-avatar item-start>
-              <img src="{{stud.profilePhoto}}">
+              <img src="{{vecino.profilePhoto}}">
             </ion-avatar>
-            <p class="item-text">{{stud.name}} {{stud.surname}}</p>
+            <p class="item-text">{{vecino.name}} {{vecino.surname}}</p>
           </button>
         </ion-list>
       <!--/ion-col>

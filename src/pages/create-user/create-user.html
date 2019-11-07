@@ -1,108 +1,110 @@
 <ion-header>
   <ion-grid>
     <ion-row>
-      <ion-col></ion-col>
-      <ion-col col-12 col-sm-10 col-md-7 col-lg-5 col-xl-4>
+      <ion-col col-md-2 col-lg-2 col-xl-2></ion-col>
+      <ion-col col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8>
         <ion-navbar>
-          <ion-title>Crear Usuario</ion-title>
+          <p class="title">Crear Usuario</p>
         </ion-navbar>
       </ion-col>
-      <ion-col></ion-col>
+      <ion-col col-md-2 col-lg-2 col-xl-2></ion-col>
     </ion-row>
   </ion-grid>
 </ion-header>
 <ion-content padding *ngIf="data">
   <ion-grid>
     <ion-row>
-      <ion-col></ion-col>
-      <ion-col col-12 col-sm-10 col-md-7 col-lg-5 col-xl-4 padding-top>      
-        <ion-list inset>
-          <ion-item>
-            <ion-label floating>
-              Nombre
-            </ion-label>
-            <ion-input placeholder="Nombre" type="text" [(ngModel)]="user.name"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label floating>
-              Apellido
-            </ion-label>
-            <ion-input placeholder="Apellido" type="text" [(ngModel)]="user.surname"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label floating>
-              RUN
-            </ion-label>
-            <ion-input placeholder="RUN" type="text" [(ngModel)]="run"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label floating>
-              Perfil
-            </ion-label>
-            <ion-select placeholder="Perfil" [(ngModel)]="user.profile">
-              <ion-option value="teacher">Profesor</ion-option>
-              <ion-option value="student">Alumno</ion-option>
-            </ion-select>
-          </ion-item>
-          <ion-item>
-            <ion-label floating>
-              Sexo
-            </ion-label>
-            <ion-select placeholder="Sexo" [(ngModel)]="user.sex">
-              <ion-option value="man">Hombre</ion-option>
-              <ion-option value="woman">Mujer</ion-option>
-            </ion-select>
-          </ion-item>
-            <ion-grid>
-              <ion-row>
-                <ion-col col-12>
-                  <ion-label class="dateBirth">
-                    Fecha de Nacimiento
-                  </ion-label>
-                </ion-col>
-                <ion-col col-3></ion-col>
-                <ion-col col-2>
-                  <ion-input [(ngModel)]="date" maxlength="2" name="date" placeholder="01"></ion-input>
-                </ion-col>
-                <ion-col col-2>
-                  <ion-input [(ngModel)]="month" maxlength="2" name="month" placeholder="01"></ion-input>
-                </ion-col>
-                <ion-col col-4>
-                  <ion-input [(ngModel)]="year" maxlength="4" name="year" placeholder="1984"></ion-input>
-                </ion-col>
-                <ion-col col-3></ion-col>
-              </ion-row>
-            </ion-grid>
-            <!--ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="user.dateBirth"></ion-datetime-->
-          <ion-item>
-            <ion-label floating>
-              Teléfono (9 dígitos)
-            </ion-label>
-            <ion-input placeholder="Teléfono (9 dígitos)" type="tel" [(ngModel)]="user.phoneNumber"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label floating>
-              Email
-            </ion-label>
-            <ion-input placeholder="Email" type="email" [(ngModel)]="user.email"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label floating>
-              Password
-            </ion-label>
-            <ion-input placeholder="Password" type="password" [(ngModel)]="password"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label floating>
-              Reingrese Password
-            </ion-label>
-            <ion-input placeholder="Reingrese Password" type="password" [(ngModel)]="vpassword"></ion-input>
-          </ion-item>
-        </ion-list>
-      
-        <button ion-button block round (click)="createUser()">Crear Nuevo Usuario</button>
+      <ion-col col-md-2 col-lg-2 col-xl-2></ion-col>
+      <ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4>      
+        <ion-item>
+          <ion-input placeholder="Nombre" type="text" [(ngModel)]="user.name"></ion-input>
+        </ion-item>
       </ion-col>
-      <ion-col></ion-col>
+      <ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4>
+        <ion-item>
+          <ion-input placeholder="Apellido" type="text" [(ngModel)]="user.surname"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col col-md-2 col-lg-2 col-xl-2></ion-col>
+      <ion-col col-md-2 col-lg-2 col-xl-2></ion-col>
+      <ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4>
+        <ion-item>
+          <ion-input placeholder="RUN" type="text" [(ngModel)]="run"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4>
+        <ion-item>
+          <ion-select placeholder="Perfil" [(ngModel)]="user.profile">
+            <ion-option value="conserje">Conserje</ion-option>
+            <ion-option value="vecino">Vecino</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col col-md-2 col-lg-2 col-xl-2></ion-col>
+      <ion-col col-md-4 col-lg-4 col-xl-4></ion-col>
+      <ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4>
+        <ion-item>
+          <ion-select placeholder="Sexo" [(ngModel)]="user.sex">
+            <ion-option value="man">Hombre</ion-option>
+            <ion-option value="woman">Mujer</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col col-md-4 col-lg-4 col-xl-4></ion-col>
+      <ion-col col-md-4 col-lg-4 col-xl-4></ion-col>
+      <ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4>
+        <div class="dateBirth">
+          <h2>Fecha de Nacimiento</h2>
+        </div>
+        <ion-row>
+          <ion-col col-4>
+            <ion-item>
+              <ion-input [(ngModel)]="date" maxlength="2" name="date" placeholder="01"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-4>
+            <ion-item>
+              <ion-input [(ngModel)]="month" maxlength="2" name="month" placeholder="01"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-4>
+            <ion-item>
+              <ion-input [(ngModel)]="year" maxlength="4" name="year" placeholder="1984"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col col-md-4 col-lg-4 col-xl-4></ion-col>
+      <ion-col col-md-2 col-lg-2 col-xl-2></ion-col>
+      <ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4>
+        <ion-item>
+          <ion-input placeholder="Teléfono (9 dígitos)" type="tel" [(ngModel)]="user.phoneNumber"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4>
+        <ion-item>
+          <ion-input placeholder="Email" type="email" [(ngModel)]="user.email"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col col-md-2 col-lg-2 col-xl-2></ion-col>
+      <ion-col col-md-2 col-lg-2 col-xl-2></ion-col>
+      <ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4>
+        <ion-item>
+          <ion-input placeholder="Password" type="password" [(ngModel)]="password"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4>
+        <ion-item>
+          <ion-input placeholder="Reingrese Password" type="password" [(ngModel)]="vpassword"></ion-input>
+        </ion-item>  
+      </ion-col>
+      <ion-col col-md-2 col-lg-2 col-xl-2></ion-col>
+      <ion-col col-md-4 col-lg-4 col-xl-4></ion-col>
+      <ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4>    
+        <button ion-button block round (click)="createUser()">Crear Nuevo Usuario</button>
+            <!--ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="user.dateBirth"></ion-datetime-->
+      </ion-col>  
+      <ion-col col-md-4 col-lg-4 col-xl-4></ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
