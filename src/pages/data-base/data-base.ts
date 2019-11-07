@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFireProvider } from '../../providers/angular-fire/angular-fire';
 import { Observable } from 'rxjs';
 import { UsersPage } from '../users/users';
+import { EditDatabasePage } from '../edit-database/edit-database';
 
 @IonicPage()
 @Component({
@@ -35,6 +36,10 @@ export class DataBasePage {
       this.showData = true;
       console.log(this.showData)
     }
+  }
+
+  toEditDatabasePage(){
+    this.navCtrl.push(EditDatabasePage, {id: this.id, edit:'yes'})
   }
 
   toUsersPage(){

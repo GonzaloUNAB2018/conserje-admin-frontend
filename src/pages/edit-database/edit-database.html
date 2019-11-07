@@ -45,9 +45,11 @@
           <ion-textarea placeholder="Comentarios" [(ngModel)]="database.commit" name="commit" type="text"></ion-textarea>
         </ion-item>
         <br>
-        <button ion-button block color="button" (click)="createDatabase()">Crear base de datos</button>
+        <button *ngIf="editButton" ion-button block color="button" (click)="createDatabase()">Editar base de datos</button>
+        <button *ngIf="!editButton" ion-button block color="button" (click)="createDatabase()">Reusar base de datos</button>
       </ion-col>
       <ion-col col-md-2 col-lg-2 col-xl-2></ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
+  

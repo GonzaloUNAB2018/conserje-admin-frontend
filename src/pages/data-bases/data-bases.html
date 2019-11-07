@@ -1,8 +1,8 @@
 <ion-header> 
   <ion-grid>
     <ion-row>
-      <ion-col></ion-col>
-      <ion-col col-12 col-sm-10 col-md-7 col-lg-5 col-xl-4>
+      <ion-col col-md-2 col-lg-2 col-xl-2></ion-col>
+      <ion-col col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8>
           <ion-navbar>
         <ion-title>BASES DE DATOS</ion-title>
         <ion-buttons end>
@@ -19,18 +19,18 @@
 <ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col></ion-col>
-      <ion-col col-12 col-sm-10 col-md-7 col-lg-5 col-xl-4>
+      <ion-col col-md-2 col-lg-2 col-xl-2></ion-col>
+      <ion-col col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8>
         <ion-list>
           <ion-item *ngFor="let dataBase of dataBases" padding-left>
             {{dataBase.Data.id}} - {{dataBase.Data.name}}
-            <button ion-button item-end (click)="goToDataBasePage(dataBase.Data.id)">INFO</button>
+            <button ion-button item-end (click)="goToDataBasePage(dataBase.Data.id)" color="button">INFO</button>
             <button color="danger" *ngIf="dataBase.Data.name != 'Eliminado'" ion-button item-end (click)="deleteDataDase(dataBase.Data.id, dataBase.Data.name)">DELETE</button>
-            <button *ngIf="dataBase.Data.name === 'Eliminado'" ion-button item-end (click)="reUseDataBase(dataBase.Data.id)">REUSE</button>
+            <button *ngIf="dataBase.Data.name === 'Eliminado'" ion-button item-end (click)="reUseDataBase(dataBase.Data.id)" color="button">REUSE</button>
           </ion-item>
         </ion-list>
       </ion-col>
-      <ion-col></ion-col>
+      <ion-col col-md-2 col-lg-2 col-xl-2></ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>

@@ -24,16 +24,16 @@ export class AngularFireProvider {
     this.afDb.database.ref(db.id+'/Data').set(db);
   }
 
-  reUseDataBase(db){
-    this.afDb.database.ref(db.id+'/Data').update(db);
+  reUseDataBase(id, db){
+    this.afDb.database.ref(id+'/Data').update(db);
   }
 
-  deleteDataBase(id, type){
+  deleteDataBase(id, commit){
     this.afDb.database.ref(id).remove();
     setTimeout(() => {
       let db = {
         name: null,
-        type: type,
+        commit: commit,
         id: id,
       }
       db.name = 'Eliminado';

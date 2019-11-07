@@ -18,4 +18,25 @@
 .title{
     text-align: center;
     font-size: 25px;
+    color: white;
+}
+
+.label{
+    font-size: 20px;
+    color: white;
+}
+
+.icon{
+    color: white;
+}
+
+.content{
+    background-color: #b6b6b6;
+}
+
+.menuList{
+    background-color: transparent;
+    .menuItem{
+        background-color: transparent;
+    }
 }

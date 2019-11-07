@@ -65,5 +65,20 @@ export class MyApp {
     this.nav.push(DataBasesPage);
     this.menuCtrl.close();
   }
+
+  toCondominiosPage(){
+    alert('En desarrollo');
+    this.menuCtrl.close();
+  }
+
+  toEdificiosPage(){
+    alert('En desarrollo');
+    this.menuCtrl.close();
+  }
+
+  toUsersPage(){
+    alert('En desarrollo');
+    this.menuCtrl.close();
+  }
 }
 

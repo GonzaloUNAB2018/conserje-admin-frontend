@@ -4,6 +4,7 @@ import { AngularFireProvider } from '../../providers/angular-fire/angular-fire';
 import { DataBase } from '../../models/database';
 import { DataBasePage } from '../data-base/data-base';
 import { CreateDatabasePage } from '../create-database/create-database';
+import { EditDatabasePage } from '../edit-database/edit-database';
 
 @IonicPage()
 @Component({
@@ -47,7 +48,7 @@ export class DataBasesPage {
 
 
   createDataBase(){
-    this.navCtrl.push(CreateDatabasePage);
+    this.navCtrl.push(CreateDatabasePage, {dataBasesNumber: this.dataBasesNumber});
     /*let alert = this.alertCtrl.create();
     alert.setTitle('Crear Base de Datos');
     alert.addInput({
@@ -143,8 +144,8 @@ export class DataBasesPage {
     alert.present()
   }
 
-  deleteDB(name, id, type){
-    this.afProvider.deleteDataBase(id, type);
+  deleteDB(name, id, commit){
+    this.afProvider.deleteDataBase(id, commit);
     let toast = this.toastCtrl.create({
       message: 'Base de datos '+name+' borrada',
       duration: 2000
@@ -154,8 +155,9 @@ export class DataBasesPage {
   }
 
   reUseDataBase(id){
-    console.log(id)
-    let alert = this.alertCtrl.create({
+    console.log(id);
+    this.navCtrl.push(EditDatabasePage, {id: id});
+    /*let alert = this.alertCtrl.create({
       title: 'Reutilizar Base de Datos Eliminada',
       inputs: [
         {
@@ -198,7 +200,7 @@ export class DataBasesPage {
         }
       ]
     });
-    alert.present()
+    alert.present()*/
   }
 
   goToDataBasePage(id){

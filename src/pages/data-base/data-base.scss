@@ -1,5 +1,36 @@
 page-data-base {
+    
+    .card.card-md,
     .toolbar-background.toolbar-background-md{
-        background-color: transparent
+        background-color: transparent;
+        .item{
+            background-color: transparent;
+        }
     }
+
+    .icon.icon-md.ion-md-create,
+    .icon.icon-md.ion-md-people,
+    .icon.icon-md.ion-md-car,
+    .icon.icon-md.ion-md-man{
+        color: #090909;
+    }
+
+    .card-md h2{
+        color: white;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 30px;
+    }
+
+    .item-md p{
+        color: white;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 20px;
+    }
+
+    .card-md p{
+        color: white;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 20px;
+    }
+    
 }

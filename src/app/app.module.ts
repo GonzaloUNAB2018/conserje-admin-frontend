@@ -23,6 +23,7 @@ import { DataBasePage } from '../pages/data-base/data-base';
 import { UsersPage } from '../pages/users/users';
 import { UserPage } from '../pages/user/user';
 import { CreateDatabasePage } from '../pages/create-database/create-database';
+import { EditDatabasePage } from '../pages/edit-database/edit-database';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { CreateDatabasePage } from '../pages/create-database/create-database';
     DataBasePage,
     UsersPage,
     UserPage,
-    CreateDatabasePage
+    CreateDatabasePage,
+    EditDatabasePage
   ],
   imports: [
     HttpClientModule,
@@ -56,7 +58,8 @@ import { CreateDatabasePage } from '../pages/create-database/create-database';
     DataBasePage,
     UsersPage,
     UserPage,
-    CreateDatabasePage
+    CreateDatabasePage,
+    EditDatabasePage
   ],
   providers: [
     StatusBar,

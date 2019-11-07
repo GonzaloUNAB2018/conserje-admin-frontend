@@ -1,9 +1,31 @@
 page-create-database {
     .content{
-        background-color: #636161;
+        background-color: #b6b6b6;
+    }
+
+    .toolbar-background.toolbar-background-md{
+        background-color: transparent;
+    }
+
+    .back-button-icon.icon.icon-md.back-button-icon-md.ion-md-arrow-back{
+        color: white;
     }
 
     .item{
         border-radius: 20px;
+    }
+
+    ion-textarea{
+        .text-input{
+            height: 100px;
+        }
+    }
+
+    .select-text{
+        overflow: visible;
+    }
+
+    ion-select{
+        max-width: 100%;
     }
 }
