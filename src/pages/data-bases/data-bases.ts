@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, LoadingController, AlertController
 import { AngularFireProvider } from '../../providers/angular-fire/angular-fire';
 import { DataBase } from '../../models/database';
 import { DataBasePage } from '../data-base/data-base';
+import { CreateDatabasePage } from '../create-database/create-database';
 
 @IonicPage()
 @Component({
@@ -44,49 +45,52 @@ export class DataBasesPage {
     })
   }
 
+
   createDataBase(){
-    let alert = this.alertCtrl.create({
-      title: 'Crear Base de Datos',
-      inputs: [
-        {
-          name: 'database_name',
-          placeholder: 'Nombre BD',
-          type: 'text'
-        },
-        {
-          name: 'text',
-          placeholder: 'Comentarios',
-          type: 'text'
-        }
-      ],
-      buttons: [
-        {
-          text: 'Cancel',
-          role: 'cancel',
-          handler: data => {
-            //console.log('Cancel clicked');
-          }
-        },
-        {
-          text: 'Create',
-          handler: data => {
-            if (data.database_name&&data.text) {
-              this.database.name = data.database_name;
-              this.database.type = data.text;
-              this.saveDB(this.dataBasesNumber);
-            } else {
-              let toast = this.toastCtrl.create({
-                message: 'Faltan Datos',
-                duration: 1500,
-              });
-              toast.present();
-              
-            }
-          }
-        }
-      ]
+    this.navCtrl.push(CreateDatabasePage);
+    /*let alert = this.alertCtrl.create();
+    alert.setTitle('Crear Base de Datos');
+    alert.addInput({
+      name: 'database_name',
+      placeholder: 'Nombre BD',
+      type: 'text'
     });
-    alert.present()
+    alert.addInput({
+      name: 'text',
+      placeholder: 'Comentarios',
+      type: 'text'
+    });
+    alert.addInput({
+      type: 'radio',
+      label: 'Blue',
+      value: 'blue',
+      checked: true
+    });
+    alert.addInput({
+      type: 'radio',
+      label: 'Red',
+      value: 'red',
+      checked: false
+    });
+    alert.addButton('Cancel');
+    alert.addButton({
+      text: 'OK',
+      handler: data => {
+        if (data.database_name&&data.text) {
+          this.database.name = data.database_name;
+          this.database.type = data.text;
+          this.saveDB(this.dataBasesNumber);
+        } else {
+          let toast = this.toastCtrl.create({
+            message: 'Faltan Datos',
+            duration: 1500,
+          });
+          toast.present();
+          
+        }
+      }
+    });
+    alert.present()*/
   }
 
   saveDB(dataBasesNumber){

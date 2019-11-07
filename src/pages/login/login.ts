@@ -36,7 +36,7 @@ login(){
   if(!this.user.email||!this.user.password){
     alert('Faltan Datos')
   }else{
-    if(this.user.email==='admin@ztudy.cl'&&this.user.password==="qwerty"){
+    if(this.user.email==='a@a.cl'&&this.user.password==="qwerty"){
       let loadingLogin = this.loadingCtrl.create({
         content: 'Iniciando sesión'
       });
