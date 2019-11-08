@@ -18,9 +18,7 @@
       <ion-col col-12 col-sm-10 col-md-7 col-lg-5 col-xl-4>
         <ion-card>
           <ion-item>
-            <ion-avatar item-start>
-              <img src="{{(user|async)?.profilePhoto}}">
-            </ion-avatar>
+            <img src="{{photo}}" class="avatar_mage" item-start>
             <h2 *ngIf="profile==='conserje'&&sex==='man'">Conserje</h2>
             <h2 *ngIf="profile==='conserje'&&sex==='woman'">Conserje</h2>
             <h2 *ngIf="profile==='vecino'&&sex==='man'">Vecino</h2>
@@ -28,6 +26,9 @@
             <h1>{{(user|async)?.name}} {{(user|async)?.surname}}</h1>
             <p>Fecha de nacimiento:</p>
             <p>{{(user|async)?.dateBirth}}</p>
+            <br>
+            <p>Fecha de creación del usuario:</p>
+            <p>{{(user|async)?.dateUserCreateResume}}</p>
           </ion-item>            
           <ion-card-content>
             <p class="text">Correo Electrónico: {{(user|async)?.email}}</p>

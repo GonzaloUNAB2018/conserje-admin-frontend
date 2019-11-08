@@ -13,4 +13,6 @@ export class User {
     profilePhoto: string;
     profile: string;
     sex: string;
+    dateUserCreate: string;
+    dateUserCreateResume: string;
 }

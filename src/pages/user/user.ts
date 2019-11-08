@@ -22,7 +22,8 @@ export class UserPage {
   sex : any;
   profile : any;
   password: string;
-
+  photo: any;
+  
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -36,6 +37,7 @@ export class UserPage {
       this.profile = navParams.get('profile');
       this.id = navParams.get('id');
       this.uid = navParams.get('uid');
+      this.photo = navParams.get('profilePhoto')
       this.getUserData();
       
   }
@@ -100,7 +102,6 @@ export class UserPage {
         });
         alert.present();
     });
-    
   }
 
   showPassword(){
@@ -117,5 +118,4 @@ export class UserPage {
       this.show = false;
     }, 5000);
   }
-
 }

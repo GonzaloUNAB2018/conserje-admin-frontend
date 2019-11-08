@@ -26,20 +26,22 @@
           <ion-item-divider>
             <p class="title">Conserjes</p>
           </ion-item-divider>
-          <button ion-item *ngFor="let conserje of conserjes" (click)="goToUserPage(conserje.uid, conserje.sex, conserje.profile)">
+          <button ion-item *ngFor="let conserje of conserjes" (click)="goToUserPage(conserje.uid, conserje.sex, conserje.profile, conserje.profilePhoto)">
             <ion-avatar item-start>
               <img src="{{conserje.profilePhoto}}">
             </ion-avatar>
             <p class="item-text">{{conserje.name}} {{conserje.surname}}</p>
+            <p class="item-text" item-end> {{conserje.dateUserCreateResume}} </p>
           </button>
-          <ion-item-divider>
+          <ion-item-divider margin-top>
             <p class="title">Moradores</p>
           </ion-item-divider>
-          <button ion-item *ngFor="let vecino of vecinos" (click)="goToUserPage(vecino.uid, vecino.sex, vecino.profile)">
+          <button ion-item *ngFor="let vecino of vecinos" (click)="goToUserPage(vecino.uid, vecino.sex, vecino.profile, vecino.profilePhoto)">
             <ion-avatar item-start>
               <img src="{{vecino.profilePhoto}}">
             </ion-avatar>
             <p class="item-text">{{vecino.name}} {{vecino.surname}}</p>
+            <p class="item-text" item-end> {{vecino.dateUserCreateResume}} </p>
           </button>
         </ion-list>
       <!--/ion-col>
