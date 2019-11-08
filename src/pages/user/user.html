@@ -1,10 +1,10 @@
 <ion-header>
   <ion-grid>
       <ion-row>
-        <ion-col></ion-col>
-        <ion-col col-12 col-sm-10 col-md-7 col-lg-5 col-xl-4>
+        <ion-col col-md-2 col-lg-2 col-xl-2></ion-col>
+        <ion-col col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8>
           <ion-navbar>
-            <ion-title>{{(user|async)?.name}} {{(user|async)?.surname}}</ion-title>
+
           </ion-navbar>
         </ion-col>
         <ion-col></ion-col>
@@ -25,25 +25,24 @@
             <h2 *ngIf="profile==='conserje'&&sex==='woman'">Conserje</h2>
             <h2 *ngIf="profile==='vecino'&&sex==='man'">Vecino</h2>
             <h2 *ngIf="profile==='vecino'&&sex==='woman'">Vecina</h2>
-            <h2>{{(user|async)?.name}} {{(user|async)?.surname}}</h2>
+            <h1>{{(user|async)?.name}} {{(user|async)?.surname}}</h1>
+            <p>Fecha de nacimiento:</p>
             <p>{{(user|async)?.dateBirth}}</p>
           </ion-item>            
           <ion-card-content>
-            <p class="text">{{(user|async)?.email}}</p>
-            <p class="text">{{(user|async)?.phone}}</p>
+            <p class="text">Correo Electrónico: {{(user|async)?.email}}</p>
+            <p class="text">Teléfono Contacto:  {{(user|async)?.phone}}</p>
           </ion-card-content>
-          <ion-row>
-            <ion-col>
-              <button ion-button icon-start clear small (click)="toDeleteUser()">
+          <ion-buttons>
+              <button ion-button icon-start clear small color="button" (click)="toDeleteUser()" end>
                 <ion-icon name="trash"></ion-icon>
                 <div>Delete</div>
               </button>
-            </ion-col>
-            <ion-col>
-            </ion-col>
-            <ion-col align-self-center text-center>
-            </ion-col>
-          </ion-row>
+              <button ion-button icon-start clear small color="button" end>
+                <ion-icon name="create"></ion-icon>
+                <div>Edit</div>
+              </button>
+          </ion-buttons>
         </ion-card>
       </ion-col>
       <ion-col></ion-col>

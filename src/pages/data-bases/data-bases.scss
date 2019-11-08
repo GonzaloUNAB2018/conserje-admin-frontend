@@ -11,6 +11,7 @@ page-data-bases {
     .item,
     .toolbar-background.toolbar-background-md{
         background-color: transparent;
+        height: 100px;
     }
 
     .icon,
@@ -21,6 +22,15 @@ page-data-bases {
     .label,
     .toolbar-title{
         color: white;
+    }
+
+    .button-inner{
+        width: 50px;
+        height: 40px;
+    }
+
+    .item-md .item-button{
+        height: 100px;
     }
     
 }

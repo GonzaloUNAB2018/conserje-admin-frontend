@@ -52,7 +52,7 @@ export class CreateUserPage {
 
   ionViewDidLoad(){
     this.consultaServidor();
-    this.getUsers();
+    //this.getUsers();
   }
 
   consultaServidor(){
@@ -69,11 +69,11 @@ export class CreateUserPage {
       console.log(this.data.message);
       if(this.data){
         loadingServer.dismiss();
-        this.toast('Servidor Conectado')
+        //this.toast('Servidor Conectado')
       }else{
         setTimeout(()=>{
           loadingServer.dismiss();
-          this.toast('No se puede conectar al servidor')
+          //this.toast('No se puede conectar al servidor')
         },10000)
       }
     });
@@ -149,11 +149,11 @@ export class CreateUserPage {
     }
   }
 
-  getUsers(){
+  /*getUsers(){
     this.http.get('http://localhost:8080/getallusers').pipe(map(res=>res)).subscribe(users=>{
       this.users = users;
     })
-  }
+  }*/
 
   
 
@@ -164,6 +164,10 @@ export class CreateUserPage {
     });
 
     toast.present();
+  }
+
+  pop(){
+    this.navCtrl.pop();
   }
 
   

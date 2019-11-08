@@ -1,21 +1,20 @@
-<ion-header>
-  <ion-grid>
-    <ion-row>
-      <ion-col col-md-2 col-lg-2 col-xl-2></ion-col>
-      <ion-col col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8>
-        <ion-navbar>
-          <p class="title">Crear Usuario</p>
-        </ion-navbar>
-      </ion-col>
-      <ion-col col-md-2 col-lg-2 col-xl-2></ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-header>
 <ion-content padding *ngIf="data">
   <ion-grid>
     <ion-row>
       <ion-col col-md-2 col-lg-2 col-xl-2></ion-col>
-      <ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4>      
+      <ion-col col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8>
+        <div>    
+          <button icon-only (click)="pop()"><ion-icon name="arrow-back"></ion-icon></button>
+          <h2>Crear Nuevo Usuario</h2> 
+        </div>
+      </ion-col>
+      <ion-col col-md-2 col-lg-2 col-xl-2></ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-md-2 col-lg-2 col-xl-2></ion-col>
+      <ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4>
         <ion-item>
           <ion-input placeholder="Nombre" type="text" [(ngModel)]="user.name"></ion-input>
         </ion-item>
@@ -101,7 +100,9 @@
       <ion-col col-md-2 col-lg-2 col-xl-2></ion-col>
       <ion-col col-md-4 col-lg-4 col-xl-4></ion-col>
       <ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4>    
-        <button ion-button block round (click)="createUser()">Crear Nuevo Usuario</button>
+        <button ion-button block round (click)="createUser()" color="button">Crear Nuevo Usuario</button>
+        <br>
+        <button ion-button block round (click)="pop()" color="button_back">Atrás</button>
             <!--ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="user.dateBirth"></ion-datetime-->
       </ion-col>  
       <ion-col col-md-4 col-lg-4 col-xl-4></ion-col>

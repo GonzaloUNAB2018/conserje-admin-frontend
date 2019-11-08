@@ -7,8 +7,13 @@ page-home {
         background-color: transparent;
     }
 
-    .icon,
+    .icon{
+        color: white;
+        //font-size: 3em;
+    }
+
     p{
         color: white;
+        font-size: 2em;
     }
 }

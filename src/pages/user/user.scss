@@ -4,11 +4,27 @@ page-user {
         background-color: transparent;
     }
 
-    p{
-        -webkit-user-select: text;
+    .toolbar-title.toolbar-title-md{
+        color: white;
     }
 
-    h2{
-        -webkit-user-select: text;
+    .card.card-md{
+        background-color: #8d8d8d;
+        h1{
+            -webkit-user-select: text;
+            color: white;
+        }
+        h2{
+            -webkit-user-select: text;
+            color: white;
+        }
+        p{
+            -webkit-user-select: text;
+            color: white;
+        }
+    }
+
+    .item.item-block.item-md{
+        background-color: transparent;
     }
 }
