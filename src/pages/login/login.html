@@ -2,27 +2,24 @@
   <ion-grid>
     <ion-row>
       <ion-col></ion-col>
-      <ion-col col-12 col-sm-10 col-md-7 col-lg-5 col-xl-4>
-        <ion-card padding>
-          <p class="title">Conserje</p>
-          <p class="subtitle">Iniciar Sesión Administradores</p>
+      <ion-col col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4>
+        <ion-card padding class="login-card">
+          <div margin-top margin-bottom>
+            <p class="title">Conserje</p>
+            <p class="subtitle">Iniciar Sesión Administradores</p>
+          </div>
           <ion-list>
             <ion-item>
-              <ion-label floating>
-                Email
-              </ion-label>
               <ion-input placeholder="Email" type="email" [(ngModel)]="user.email"></ion-input>
             </ion-item>
+            <br>
             <ion-item>
-              <ion-label floating>
-                Password
-              </ion-label>
               <ion-input placeholder="Password" type="password" [(ngModel)]="user.password"></ion-input>
             </ion-item>
             <br>
           </ion-list>
           <div align="center">
-            <button ion-button round (click)="login()">Login Admin</button>
+            <button ion-button round (click)="login()" color="button">Login Admin</button>
           </div>
         </ion-card>
       </ion-col>

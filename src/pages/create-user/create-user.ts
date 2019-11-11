@@ -61,7 +61,7 @@ export class CreateUserPage {
       content: 'Iniciando conexión con el servidor'
     });
     loadingServer.present();
-    this.http.post('http://localhost:8080/contact', {
+    this.http.post('https://conserje-cl.appspot.com/contact', {
       message : this.consulta.message
     })
     .pipe(map(res=>res))
@@ -126,7 +126,7 @@ export class CreateUserPage {
         if(validate(this.run)){
           this.user.run = format(this.run);
           this.user.dateBirth = this.date.toString()+'-'+this.month.toString()+'-'+this.year.toString();
-          this.http.post('http://localhost:8080/createuser', {
+          this.http.post('https://conserje-cl.appspot.com/createuser', {
             displayName: this.user.name+' '+this.user.surname,
             email: this.user.email,
             phoneNumber: '+56'+this.user.phoneNumber,

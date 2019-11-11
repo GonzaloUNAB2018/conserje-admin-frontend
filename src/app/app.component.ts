@@ -63,7 +63,9 @@ export class MyApp {
 
   toDataBasesPage(){
     this.nav.push(DataBasesPage);
-    this.menuCtrl.close();
+    this.menuCtrl.close().then(()=>{
+      this.menuCtrl.enable(false)
+    });
   }
 
   toCondominiosPage(){

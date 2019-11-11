@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController, AlertController, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, AlertController, ToastController, MenuController } from 'ionic-angular';
 import { AngularFireProvider } from '../../providers/angular-fire/angular-fire';
 import { DataBase } from '../../models/database';
 import { DataBasePage } from '../data-base/data-base';
@@ -23,13 +23,18 @@ export class DataBasesPage {
     private afProvider : AngularFireProvider,
     public loadingCtrl: LoadingController,
     public alertCtrl: AlertController,
-    public toastCtrl: ToastController
+    public toastCtrl: ToastController,
+    public menuCtrl: MenuController
     ) {
-      
+      this.menuCtrl.enable(false);
   }
 
   ionViewDidLoad() {
     this.getDataBases();
+  }
+
+  ionViewDidLeave(){
+    this.menuCtrl.enable(true);
   }
 
   getDataBases(){

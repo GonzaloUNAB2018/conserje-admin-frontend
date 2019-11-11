@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController, LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, LoadingController, MenuController } from 'ionic-angular';
 import { DataBase } from '../../models/database';
 import { AngularFireProvider } from '../../providers/angular-fire/angular-fire';
 
