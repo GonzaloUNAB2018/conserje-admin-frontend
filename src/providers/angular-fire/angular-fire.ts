@@ -13,19 +13,19 @@ export class AngularFireProvider {
   }
 
   getDataBases(){
-    return this.afDb.list('/');
+    return this.afDb.list('Databases/');
   }
 
   getDataBase(id){
-    return this.afDb.object(id+'/Data');
+    return this.afDb.object('Databases/'+id+'/Data');
   }
 
   createDataBase(db){
-    this.afDb.database.ref(db.id+'/Data').set(db);
+    this.afDb.database.ref('Databases/'+db.id+'/Data').set(db);
   }
 
   reUseDataBase(id, db){
-    this.afDb.database.ref(id+'/Data').update(db);
+    this.afDb.database.ref('Databases/'+id+'/Data').update(db);
   }
 
   deleteDataBase(id, commit){
@@ -38,24 +38,29 @@ export class AngularFireProvider {
       }
       db.name = 'Eliminado';
       //db.type = 'Eliminado';
-      this.afDb.database.ref(db.id+'/Data').set(db);
+      this.afDb.database.ref('Databases/'+db.id+'/Data').set(db);
     }, 1000);
   }
 
   getUsers(id){
-    return this.afDb.list(id+'/Users');
+    return this.afDb.list('Databases/'+id+'/Users');
   }
 
   getUser(id, uid){
-    return this.afDb.object(id+'/Users/'+uid);
+    return this.afDb.object('Databases/'+id+'/Users/'+uid);
   }
 
   createUser(id, user){
-    this.afDb.database.ref(id+'/Users/'+user.uid).set(user);
+    let user_id = {
+      id: id
+    };
+    this.afDb.database.ref('Databases/'+id+'/Users/'+user.uid).set(user);
+    this.afDb.database.ref('Users/'+user.uid).set(user_id);
   }
 
   deleteUser(id, uid){
-    this.afDb.database.ref(id+'/Users/'+uid).remove();
+    this.afDb.database.ref('Databases/'+id+'/Users/'+uid).remove();
+    this.afDb.database.ref('Users/'+uid);
   }
 
 }

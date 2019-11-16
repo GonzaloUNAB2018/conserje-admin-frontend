@@ -147,6 +147,7 @@ export class CreateUserPage {
             console.log(this.userData);
             if(this.userData){
               this.setDate();
+              this.user.databaseId = this.id;
               this.user.uid = this.userData.uid;
               this.user.phone = '+56'+this.user.phoneNumber;
               //this.user.profilePhoto = 'null';

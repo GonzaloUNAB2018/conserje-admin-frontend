@@ -3,4 +3,6 @@ export class DataBase {
     name: string;
     type: string;
     commit: string;
+    address: string;
+    city: string;
 }

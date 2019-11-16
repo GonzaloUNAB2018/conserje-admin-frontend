@@ -37,8 +37,8 @@ export class EditDatabasePage {
             this.database.name = this.db.name;
             this.database.type = this.db.type;
             this.database.commit = this.db.commit;
-            console.log(this.database.name, this.database.type, this.database.commit);
-
+            this.database.address = this.db.address;
+            this.database.city = this.db.city;
           }
         }
       })

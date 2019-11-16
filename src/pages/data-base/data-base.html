@@ -21,7 +21,13 @@
           <h2 padding>Detalles de la Base de Datos</h2>
           <ion-list no-lines>
             <ion-item>
-              <p item-start>Nombre : </p><p item-start>{{ (dataBase | async)?.name }}</p>
+              <p item-start>Cliente : </p><p item-start>{{ (dataBase | async)?.name }}</p>
+            </ion-item>
+            <ion-item>
+              <p item-start>Dirección : </p><p item-start>{{ (dataBase | async)?.address }}</p>
+            </ion-item>
+            <ion-item>
+              <p item-start>Ciudad : </p><p item-start>{{ (dataBase | async)?.city }}</p>
             </ion-item>
             <ion-item>
               <p item-start>Tipo de cliente : </p><p item-start>{{ (dataBase | async)?.type }}</p>

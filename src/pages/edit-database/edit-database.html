@@ -42,6 +42,14 @@
       <ion-col col-md-2 col-lg-2 col-xl-2></ion-col>
       <ion-col col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8>
         <ion-item>
+          <ion-input [(ngModel)]="database.address" name="address" type="text" placeholder="Dirección del recinto"></ion-input>
+        </ion-item>
+        <br>
+        <ion-item>
+          <ion-input [(ngModel)]="database.city" name="city" type="text" placeholder="Ciudad"></ion-input>
+        </ion-item>
+        <br>
+        <ion-item>
           <ion-textarea placeholder="Comentarios" [(ngModel)]="database.commit" name="commit" type="text"></ion-textarea>
         </ion-item>
         <br>

@@ -19,11 +19,17 @@ page-users {
         color: white;
     }
 
+    .name{
+        margin-top: 10px;
+    }
+
     .item-text{
-        font-size: 15px;
+        font-size: 1.7rem;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         text-align: justify;
         color: white;
+        text-shadow: 2px 2px grey;
+        
     }
 
     .item{

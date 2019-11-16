@@ -15,4 +15,5 @@ export class User {
     sex: string;
     dateUserCreate: string;
     dateUserCreateResume: string;
+    databaseId: string;
 }
