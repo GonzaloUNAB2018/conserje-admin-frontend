@@ -52,8 +52,6 @@ export class CreateUserPage {
 
   ionViewDidLoad(){
     this.consultaServidor();
-    //this.setDate();
-    //this.getUsers();
   }
 
   consultaServidor(){
@@ -61,7 +59,7 @@ export class CreateUserPage {
       content: 'Iniciando conexión con el servidor'
     });
     loadingServer.present();
-    this.http.post('https://conserje-cl.appspot.com/contact', {
+    this.http.post('https://localhost:8080/contact', {
       message : this.consulta.message
     })
     .pipe(map(res=>res))
@@ -70,11 +68,9 @@ export class CreateUserPage {
       console.log(this.data.message);
       if(this.data){
         loadingServer.dismiss();
-        //this.toast('Servidor Conectado')
       }else{
         setTimeout(()=>{
           loadingServer.dismiss();
-          //this.toast('No se puede conectar al servidor')
         },10000)
       }
     });
@@ -126,20 +122,12 @@ export class CreateUserPage {
         if(validate(this.run)){
           this.user.run = format(this.run);
           this.user.dateBirth = this.date.toString()+'-'+this.month.toString()+'-'+this.year.toString();
-          this.http.post('https://conserje-cl.appspot.com/createuser', {
+          this.http.post('https://localhost:8080/createuser', {
             displayName: this.user.name+' '+this.user.surname,
             email: this.user.email,
             phoneNumber: '+56'+this.user.phoneNumber,
             password: this.password,
             disabled: false,
-            /*providerData: [{
-              uid: this.user.email,//'a@a.cl',
-              displayName: this.user.name+' '+this.user.surname,
-              email: this.user.email,//'a@a.cl',
-              //photoURL: undefined,
-              providerId: 'password',//'password',
-              //phoneNumber: undefined
-            }]*/
           })
           .pipe(map(res=>res))
           .subscribe(data=>{
@@ -150,7 +138,6 @@ export class CreateUserPage {
               this.user.databaseId = this.id;
               this.user.uid = this.userData.uid;
               this.user.phone = '+56'+this.user.phoneNumber;
-              //this.user.profilePhoto = 'null';
               this.user.dateUserCreate = new Date().toString();
               console.log(this.user);
               this.afProvider.createUser(this.id, this.user);
@@ -161,7 +148,6 @@ export class CreateUserPage {
                   {
                     text: 'Ok',
                     handler: () => {
-                      //this.getUsers();
                       this.user.name = null;
                       this.user.surname = null;
                       this.user.password = null;
@@ -173,13 +159,6 @@ export class CreateUserPage {
                 ]
               });
               alert.present();
-              /*this.http.post('http://localhost:8080/sendemail',{
-                email: this.user.email,
-              })
-              .pipe(map(res=>res))
-              .subscribe(data=>{
-                console.log(data)
-              })*/
             }
           })
         }else{
@@ -190,14 +169,6 @@ export class CreateUserPage {
       }
     }
   }
-
-  /*getUsers(){
-    this.http.get('http://localhost:8080/getallusers').pipe(map(res=>res)).subscribe(users=>{
-      this.users = users;
-    })
-  }*/
-
-  
 
   toast(message){
     let toast = this.toastCtrl.create({
